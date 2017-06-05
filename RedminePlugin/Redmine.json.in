@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"Redmine\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"OpenSource\",
+    \"Copyright\" : \"GPL\",
+    \"License\" : \"GPL\",
+    \"Description\" : \"Redmine client plugin\",
+    \"Url\" : \"https://github.com/babak-ab/QRedminePlugin\",
+    $$dependencyList
+}
