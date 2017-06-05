@@ -2,11 +2,20 @@ DEFINES += REDMINE_LIBRARY
 
 # Redmine files
 
-SOURCES += redmineplugin.cpp
+SOURCES += redmineplugin.cpp \
+    mainwindow.cpp \
+    MainMode.cpp \
+    Settings.cpp \
+    SettingsWidget.cpp
 
 HEADERS += redmineplugin.h \
         redmine_global.h \
-        redmineconstants.h
+        redmineconstants.h \
+    mainwindow.h \
+    MainMode.h \
+    Settings.h \
+    SettingsRepository.h \
+    SettingsWidget.h
 
 # Qt Creator linking
 
@@ -26,8 +35,8 @@ isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = "/opt/Qt5.9.0/Tools/QtCreator"
 ##    "%LOCALAPPDATA%\QtProject\qtcreator" on Windows Vista and later
 ##    "$XDG_DATA_HOME/data/QtProject/qtcreator" or "~/.local/share/data/QtProject/qtcreator" on Linux
 ##    "~/Library/Application Support/QtProject/Qt Creator" on OS X
-USE_USER_DESTDIR = yes
-
+##USE_USER_DESTDIR = yes
+DESTDIR = /home/babak/Project/qt-plugin/QRedminePlugin/build
 ###### If the plugin can be depended upon by other plugins, this code needs to be outsourced to
 ###### <dirname>_dependencies.pri, where <dirname> is the name of the directory containing the
 ###### plugin's sources.
@@ -45,3 +54,10 @@ QTC_PLUGIN_RECOMMENDS += \
 ###### End _dependencies.pri contents ######
 
 include($$IDE_SOURCE_TREE/src/qtcreatorplugin.pri)
+include($$PWD/redmineclinet/redmineclinet.pri)
+FORMS += \
+    mainwindow.ui \
+    SettingsWidget.ui
+
+RESOURCES += \
+    resources.qrc

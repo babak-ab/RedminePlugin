@@ -13,23 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
-   <item>
-    <widget class="QGroupBox" name="groupRepos">
-     <property name="title">
-      <string>Repository</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QListWidget" name="listWidget">
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
+  <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1">
    <item>
     <widget class="QGroupBox" name="groupSettings">
      <property name="title">
@@ -40,68 +24,68 @@
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Repository Name</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Server</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>Username</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_4">
-            <property name="text">
-             <string>Password</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="repoName"/>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="repoServer"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="repoUser"/>
+           <widget class="QLineEdit" name="lineEdit_server"/>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="repoPassword">
+           <widget class="QCheckBox" name="checkBox_savePassword">
+            <property name="text">
+             <string>Save Password</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit_username"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEdit_password">
             <property name="echoMode">
              <enum>QLineEdit::Password</enum>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
-           <widget class="QCheckBox" name="repoSavePassword">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Save Password</string>
+             <string>Server URL:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Password:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Username:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QPushButton" name="pushButton_checkConnection">
+            <property name="text">
+             <string>Check Connection</string>
             </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
+         <widget class="QLabel" name="label_status">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>Status:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QPushButton" name="buttonDelete">
-            <property name="text">
-             <string>Delete Repository</string>
-            </property>
-           </widget>
-          </item>
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
@@ -114,13 +98,6 @@
              </size>
             </property>
            </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="buttonAddRepo">
-            <property name="text">
-             <string>Add Repository</string>
-            </property>
-           </widget>
           </item>
          </layout>
         </item>
@@ -144,6 +121,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEdit_server</tabstop>
+  <tabstop>lineEdit_username</tabstop>
+  <tabstop>lineEdit_password</tabstop>
+  <tabstop>pushButton_checkConnection</tabstop>
+  <tabstop>checkBox_savePassword</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

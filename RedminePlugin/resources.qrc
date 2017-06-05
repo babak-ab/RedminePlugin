@@ -1,1 +1,7 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>images/redmine.png</file>
+        <file>images/remone_red.png</file>
+        <file>images/redmine_.png</file>
+    </qresource>
+</RCC>

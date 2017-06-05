@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_IBase_t {
     QByteArrayData data[9];
-    char stringdata0[95];
+    char stringdata0[86];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,17 +34,17 @@ static const qt_meta_stringdata_IBase_t qt_meta_stringdata_IBase = {
 QT_MOC_LITERAL(0, 0, 5), // "IBase"
 QT_MOC_LITERAL(1, 6, 13), // "sigReplyError"
 QT_MOC_LITERAL(2, 20, 0), // ""
-QT_MOC_LITERAL(3, 21, 15), // "ConnectionError"
-QT_MOC_LITERAL(4, 37, 3), // "err"
-QT_MOC_LITERAL(5, 41, 15), // "sigRecvResponse"
-QT_MOC_LITERAL(6, 57, 16), // "sltReplyFinished"
-QT_MOC_LITERAL(7, 74, 14), // "QNetworkReply*"
-QT_MOC_LITERAL(8, 89, 5) // "reply"
+QT_MOC_LITERAL(3, 21, 11), // "ReplayError"
+QT_MOC_LITERAL(4, 33, 3), // "err"
+QT_MOC_LITERAL(5, 37, 10), // "sigReplyOk"
+QT_MOC_LITERAL(6, 48, 16), // "sltReplyFinished"
+QT_MOC_LITERAL(7, 65, 14), // "QNetworkReply*"
+QT_MOC_LITERAL(8, 80, 5) // "reply"
 
     },
-    "IBase\0sigReplyError\0\0ConnectionError\0"
-    "err\0sigRecvResponse\0sltReplyFinished\0"
-    "QNetworkReply*\0reply"
+    "IBase\0sigReplyError\0\0ReplayError\0err\0"
+    "sigReplyOk\0sltReplyFinished\0QNetworkReply*\0"
+    "reply"
 };
 #undef QT_MOC_LITERAL
 
@@ -84,8 +84,8 @@ void IBase::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         IBase *_t = static_cast<IBase *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->sigReplyError((*reinterpret_cast< ConnectionError(*)>(_a[1]))); break;
-        case 1: _t->sigRecvResponse(); break;
+        case 0: _t->sigReplyError((*reinterpret_cast< ReplayError(*)>(_a[1]))); break;
+        case 1: _t->sigReplyOk(); break;
         case 2: _t->sltReplyFinished((*reinterpret_cast< QNetworkReply*(*)>(_a[1]))); break;
         default: ;
         }
@@ -104,7 +104,7 @@ void IBase::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         int *result = reinterpret_cast<int *>(_a[0]);
         void **func = reinterpret_cast<void **>(_a[1]);
         {
-            typedef void (IBase::*_t)(ConnectionError );
+            typedef void (IBase::*_t)(ReplayError );
             if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&IBase::sigReplyError)) {
                 *result = 0;
                 return;
@@ -112,7 +112,7 @@ void IBase::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         }
         {
             typedef void (IBase::*_t)();
-            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&IBase::sigRecvResponse)) {
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&IBase::sigReplyOk)) {
                 *result = 1;
                 return;
             }

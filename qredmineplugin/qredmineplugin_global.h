@@ -1,9 +1,0 @@
-#pragma once
-
-#include <QtGlobal>
-
-#if defined(QREDMINEPLUGIN_LIBRARY)
-#  define QREDMINEPLUGINSHARED_EXPORT Q_DECL_EXPORT
-#else
-#  define QREDMINEPLUGINSHARED_EXPORT Q_DECL_IMPORT
-#endif

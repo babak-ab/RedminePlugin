@@ -656,10 +656,11 @@ moc_predefs.h: /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/data/dummy.cpp
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
-moc_mainwindow.cpp: ../issuerequest.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+moc_mainwindow.cpp: ../check.h \
+		../imanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
@@ -681,7 +682,7 @@ moc_mainwindow.cpp: ../issuerequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
@@ -689,11 +690,6 @@ moc_mainwindow.cpp: ../issuerequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
-		../ibase.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
@@ -757,8 +753,12 @@ moc_mainwindow.cpp: ../issuerequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkRequest \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QXmlStreamWriter \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qxmlstream.h \
-		../issuemodel.h \
-		../projectmodel.h \
+		../issue/issuerequest.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../issue/issuemodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
@@ -829,10 +829,11 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
-		../issuerequest.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		../check.h \
+		../imanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
@@ -854,7 +855,7 @@ main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
@@ -862,11 +863,6 @@ main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
-		../ibase.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
@@ -930,8 +926,12 @@ main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkRequest \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QXmlStreamWriter \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qxmlstream.h \
-		../issuemodel.h \
-		../projectmodel.h \
+		../issue/issuerequest.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../issue/issuemodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
@@ -987,10 +987,11 @@ main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../test-qredmineclient/main.cpp
 
 mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainwindow.h \
-		../issuerequest.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		../check.h \
+		../imanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
@@ -1012,7 +1013,7 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
@@ -1020,11 +1021,6 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
-		../ibase.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
@@ -1088,8 +1084,12 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkRequest \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QXmlStreamWriter \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qxmlstream.h \
-		../issuemodel.h \
-		../projectmodel.h \
+		../issue/issuerequest.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../issue/issuemodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \

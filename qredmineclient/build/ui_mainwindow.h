@@ -16,6 +16,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QToolBar>
@@ -29,6 +30,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
+    QPushButton *pushButton;
     QTableView *tableView;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -45,8 +47,19 @@ public:
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        verticalLayout->addWidget(pushButton);
+
         tableView = new QTableView(centralWidget);
         tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
+        tableView->setVerticalScrollMode(QAbstractItemView::ScrollPerPixel);
+        tableView->setHorizontalScrollMode(QAbstractItemView::ScrollPerPixel);
+        tableView->setWordWrap(true);
+        tableView->horizontalHeader()->setStretchLastSection(true);
 
         verticalLayout->addWidget(tableView);
 
@@ -70,6 +83,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("MainWindow", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };

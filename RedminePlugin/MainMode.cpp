@@ -1,13 +1,10 @@
 #include "MainMode.h"
+namespace Redmine {
 
-namespace RedmineConnector {
-
-MainMode::MainMode(QWidget *widget)
-{
-    setWidget(widget);
-    setDisplayName(tr("Redmine"));
-    setIcon(QIcon(QLatin1String(":/img/redmine_fluid_icon.png")));
-    setPriority(0);
+MainMode::MainMode(QWidget *widget) {
+  setWidget(widget);
+  setDisplayName(tr("Redmine"));
+  setIcon(QIcon(":/images/redmine_.png"));
+  setPriority(0);
 }
-
 }

@@ -2,15 +2,12 @@
 #define MAINMODE_H
 
 #include <coreplugin/imode.h>
+namespace Redmine {
 
-namespace RedmineConnector {
-
-class MainMode : public Core::IMode
-{
+class MainMode : public Core::IMode {
 public:
-    MainMode(QWidget *widget);
+  MainMode(QWidget *widget);
 };
-
 }
 
 #endif // MAINMODE_H

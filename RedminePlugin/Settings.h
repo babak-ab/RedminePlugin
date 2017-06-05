@@ -1,39 +1,43 @@
 #ifndef SETTINGS_H
 #define SETTINGS_H
 
-#include <coreplugin/dialogs/ioptionspage.h>
 #include <QIcon>
+#include <coreplugin/dialogs/ioptionspage.h>
 
-#include "SettingsWidget.h"
 #include "SettingsRepository.h"
+#include "SettingsWidget.h"
 
-namespace RedmineConnector {
+namespace Redmine {
 
-class Settings : public Core::IOptionsPage
-{
-    Q_OBJECT
+class Settings : public Core::IOptionsPage {
+  Q_OBJECT
 public:
-    Settings(QObject *parent);
-    ~Settings();
+  Settings(QObject *parent);
+  ~Settings();
 
-    QString id() const;
-    QString displayName() const;
-    QString category() const;
-    QString displayCategory() const;
-    QWidget *createPage(QWidget *parent);
-    QString categoryIcon() const;
-    void apply();
-    void finish();
-    QList<SettingsRepository> repositories();
-    static Settings* instance();
+  QString id() const;
+  QString displayName() const;
+  Core::Id category() const;
+  QString displayCategory() const;
+  QWidget *createPage(QWidget *parent);
+  QString categoryIcon() const;
+  void apply();
+  void finish();
+  static Settings *instance();
 
-    void setMainWindowSplitterSizes(QByteArray sizes);
-    QByteArray mainWindowSplitterSizes();
+  void setMainWindowSplitterSizes(QByteArray sizes);
+  QByteArray mainWindowSplitterSizes();
 
 private:
-    SettingsWidget *settingsWidget;
-    QList<SettingsRepository> _repositories;
-    static Settings *_instance;
+  SettingsWidget *settingsWidget;
+  SettingConnection _settingConnection;
+  static Settings *_instance;
+
+  // IOptionsPage interface
+public:
+  QWidget *widget();
+  void setSettingConnection(const SettingConnection &settingConnection);
+  SettingConnection settingConnection() const;
 };
 
 } // namespace RedmineConnector

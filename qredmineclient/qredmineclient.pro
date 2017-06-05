@@ -25,19 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         qredmineclient.cpp \
-    ibase.cpp \
-    issuemodel.cpp \
-    issuerequest.cpp \
-    projectmodel.cpp
+    projectmodel.cpp \
+    check.cpp \
+    imanager.cpp
 
 HEADERS += \
         qredmineclient.h \
-        qredmineclient_global.h \  
-    ibase.h \
-    issuemodel.h \
-    issuerequest.h \
-    projectmodel.h
+        qredmineclient_global.h \
+    projectmodel.h \
+    check.h \
+    imanager.h
 
+include($$PWD/issue/issue.pri)
 unix {
     target.path = /usr/lib
     INSTALLS += target
