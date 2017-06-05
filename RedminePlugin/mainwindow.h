@@ -4,6 +4,8 @@
 #include "Settings.h"
 #include "issuemodel.h"
 #include "issuerequest.h"
+#include "projectmodel.h"
+#include "projectrequest.h"
 #include <QMainWindow>
 using namespace Redmine;
 
@@ -21,11 +23,18 @@ public:
 private slots:
   void on_pushButton_issue_clicked();
 
-  void sltReplyOk();
+  void sltIssueReplyOk();
+
+  void on_pushButton_loadAllIssue_clicked();
+
+  void on_pushButton_project_clicked();
+
+  void sltProjectReplyOk();
 
 private:
   Ui::MainWindow *ui;
   IssueRequest *issue;
+  ProjectRequest *project;
 };
 
 #endif // MAINWINDOW_H

@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -31,6 +32,7 @@ public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton;
+    QComboBox *comboBox;
     QTableView *tableView;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -51,6 +53,11 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         verticalLayout->addWidget(pushButton);
+
+        comboBox = new QComboBox(centralWidget);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+
+        verticalLayout->addWidget(comboBox);
 
         tableView = new QTableView(centralWidget);
         tableView->setObjectName(QStringLiteral("tableView"));

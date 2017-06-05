@@ -778,6 +778,8 @@ moc_mainwindow.cpp: ../check.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		../project/projectrequest.h \
+		../project/projectmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -951,6 +953,8 @@ main.o: ../test-qredmineclient/main.cpp ../test-qredmineclient/mainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		../project/projectrequest.h \
+		../project/projectmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1109,6 +1113,8 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		../project/projectrequest.h \
+		../project/projectmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -1148,12 +1154,8 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qinputmethod.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QButtonGroup \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QHeaderView \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qheaderview.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qframe.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qitemselectionmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QComboBox \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qcombobox.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qstyleoption.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -1164,9 +1166,18 @@ mainwindow.o: ../test-qredmineclient/mainwindow.cpp ../test-qredmineclient/mainw
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qstyle.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qframe.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QHeaderView \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qheaderview.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractitemview.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qitemselectionmodel.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMenuBar \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmenubar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmenu.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractbutton.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QStatusBar \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qstatusbar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QTableView \

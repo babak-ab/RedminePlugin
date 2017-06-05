@@ -2,8 +2,6 @@
 
 IssueModel::IssueModel(QObject *parent) : QAbstractTableModel(parent) {}
 
-void IssueModel::clear() { listOfIssue.clear(); }
-
 int IssueModel::rowCount(const QModelIndex &parent) const {
   Q_UNUSED(parent);
   return listOfIssue.size();
@@ -115,6 +113,13 @@ Qt::ItemFlags IssueModel::flags(const QModelIndex &index) const {
 }
 
 QList<IssueModel::Issue> IssueModel::getList() { return listOfIssue; }
+
+void IssueModel::clear() {
+
+  beginResetModel();
+  listOfIssue.clear();
+  endResetModel();
+}
 
 void IssueModel::addIssue(IssueModel::Issue issue) {
 

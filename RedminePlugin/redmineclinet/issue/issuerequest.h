@@ -11,6 +11,7 @@ public:
   IssueRequest(QObject *parent = 0);
 
   void getIssue(QUrl url, QString usename, QString password);
+  void getIssue(QUrl url, QString usename, QString password, int projectId);
 
   IssueModel *getModel() const;
 

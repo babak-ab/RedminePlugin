@@ -14,16 +14,33 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
      <widget class="QPushButton" name="pushButton_issue">
       <property name="text">
-       <string>Get Issue</string>
+       <string>Load Issue</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="0" column="0">
+     <widget class="QComboBox" name="comboBox_project"/>
+    </item>
+    <item row="4" column="0" colspan="2">
      <widget class="QTableView" name="tableView"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="pushButton_project">
+      <property name="text">
+       <string>Load Project</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pushButton_loadAllIssue">
+      <property name="text">
+       <string>Load All Issue</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

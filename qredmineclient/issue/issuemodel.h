@@ -56,7 +56,7 @@ public:
   enum { ID = 0, SUBJECT, DESCRIPTION };
   IssueModel(QObject *parent = 0);
   IssueModel(QList<QPair<QString, QString>> listofPairs, QObject *parent = 0);
-    void clear();
+
   int rowCount(const QModelIndex &parent) const;
   int columnCount(const QModelIndex &parent) const;
   QVariant data(const QModelIndex &index, int role) const;
@@ -72,6 +72,8 @@ public:
   void addIssue(Issue issue);
 
   void removeIssue(int row);
+
+  void clear();
 
 private:
   QList<Issue> listOfIssue;

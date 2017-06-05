@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DREDMINE_LIBRARY -DWITH_TESTS -D'RELATIVE_PLUGIN_PATH="../lib/qtcreator/plugins"' -D'RELATIVE_LIBEXEC_PATH="../libexec/qtcreator"' -D'RELATIVE_DATA_PATH="../share/qtcreator"' -D'RELATIVE_DOC_PATH="../share/doc/qtcreator"' -DIDE_LIBRARY_BASENAME=\"lib\" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -DQT_QML_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_XML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/babak/Project/qt-plugin/QRedminePlugin/build"'
 CFLAGS        = -pipe -g -fvisibility=hidden -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++1y -fvisibility=hidden -fvisibility-inlines-hidden -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I/opt/Qt5.9.0/Tools/QtCreator/src -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I. -I../RedminePlugin/redmineclinet -I../RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I.moc/debug-shared -isystem /usr/include/libdrm -I.uic -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++
+INCPATH       = -I/opt/Qt5.9.0/Tools/QtCreator/src -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I../../../3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I. -I../RedminePlugin/redmineclinet -I../RedminePlugin/redmineclinet/issue -I../RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I.moc/debug-shared -isystem /usr/include/libdrm -I.uic -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++
 QMAKE         = /opt/Qt5.9.0/5.9/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -58,6 +58,8 @@ SOURCES       = ../RedminePlugin/redmineplugin.cpp \
 		../RedminePlugin/SettingsWidget.cpp \
 		../RedminePlugin/redmineclinet/issue/issuemodel.cpp \
 		../RedminePlugin/redmineclinet/issue/issuerequest.cpp \
+		../RedminePlugin/redmineclinet/project/projectmodel.cpp \
+		../RedminePlugin/redmineclinet/project/projectrequest.cpp \
 		../RedminePlugin/redmineclinet/imanager.cpp \
 		../RedminePlugin/redmineclinet/check.cpp .rcc/qrc_resources.cpp \
 		.moc/debug-shared/moc_redmineplugin.cpp \
@@ -66,6 +68,8 @@ SOURCES       = ../RedminePlugin/redmineplugin.cpp \
 		.moc/debug-shared/moc_SettingsWidget.cpp \
 		.moc/debug-shared/moc_issuemodel.cpp \
 		.moc/debug-shared/moc_issuerequest.cpp \
+		.moc/debug-shared/moc_projectmodel.cpp \
+		.moc/debug-shared/moc_projectrequest.cpp \
 		.moc/debug-shared/moc_imanager.cpp \
 		.moc/debug-shared/moc_check.cpp
 OBJECTS       = .obj/debug-shared/redmineplugin.o \
@@ -75,6 +79,8 @@ OBJECTS       = .obj/debug-shared/redmineplugin.o \
 		.obj/debug-shared/SettingsWidget.o \
 		.obj/debug-shared/issuemodel.o \
 		.obj/debug-shared/issuerequest.o \
+		.obj/debug-shared/projectmodel.o \
+		.obj/debug-shared/projectrequest.o \
 		.obj/debug-shared/imanager.o \
 		.obj/debug-shared/check.o \
 		.obj/debug-shared/qrc_resources.o \
@@ -84,6 +90,8 @@ OBJECTS       = .obj/debug-shared/redmineplugin.o \
 		.obj/debug-shared/moc_SettingsWidget.o \
 		.obj/debug-shared/moc_issuemodel.o \
 		.obj/debug-shared/moc_issuerequest.o \
+		.obj/debug-shared/moc_projectmodel.o \
+		.obj/debug-shared/moc_projectrequest.o \
 		.obj/debug-shared/moc_imanager.o \
 		.obj/debug-shared/moc_check.o
 DIST          = ../RedminePlugin/Redmine.json.in \
@@ -253,6 +261,7 @@ DIST          = ../RedminePlugin/Redmine.json.in \
 		../../../3rdparty/qt-creator-opensource-src-4.3.0/src/rpath.pri \
 		../../../3rdparty/qt-creator-opensource-src-4.3.0/src/qtcreatorplugin.pri \
 		../RedminePlugin/redmineclinet/issue/issue.pri \
+		../RedminePlugin/redmineclinet/project/project.pri \
 		../RedminePlugin/redmineclinet/redmineclinet.pri \
 		/opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/default_post.prf \
@@ -282,6 +291,8 @@ DIST          = ../RedminePlugin/Redmine.json.in \
 		../RedminePlugin/SettingsWidget.h \
 		../RedminePlugin/redmineclinet/issue/issuemodel.h \
 		../RedminePlugin/redmineclinet/issue/issuerequest.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		../RedminePlugin/redmineclinet/project/projectrequest.h \
 		../RedminePlugin/redmineclinet/imanager.h \
 		../RedminePlugin/redmineclinet/check.h ../RedminePlugin/redmineplugin.cpp \
 		../RedminePlugin/mainwindow.cpp \
@@ -290,6 +301,8 @@ DIST          = ../RedminePlugin/Redmine.json.in \
 		../RedminePlugin/SettingsWidget.cpp \
 		../RedminePlugin/redmineclinet/issue/issuemodel.cpp \
 		../RedminePlugin/redmineclinet/issue/issuerequest.cpp \
+		../RedminePlugin/redmineclinet/project/projectmodel.cpp \
+		../RedminePlugin/redmineclinet/project/projectrequest.cpp \
 		../RedminePlugin/redmineclinet/imanager.cpp \
 		../RedminePlugin/redmineclinet/check.cpp
 QMAKE_TARGET  = Redmine
@@ -475,6 +488,7 @@ Makefile: ../RedminePlugin/redmine.pro /opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++
 		../../../3rdparty/qt-creator-opensource-src-4.3.0/src/rpath.pri \
 		../../../3rdparty/qt-creator-opensource-src-4.3.0/src/qtcreatorplugin.pri \
 		../RedminePlugin/redmineclinet/issue/issue.pri \
+		../RedminePlugin/redmineclinet/project/project.pri \
 		../RedminePlugin/redmineclinet/redmineclinet.pri \
 		/opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/resolve_config.prf \
 		/opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/default_post.prf \
@@ -671,6 +685,7 @@ Makefile: ../RedminePlugin/redmine.pro /opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++
 ../../../3rdparty/qt-creator-opensource-src-4.3.0/src/rpath.pri:
 ../../../3rdparty/qt-creator-opensource-src-4.3.0/src/qtcreatorplugin.pri:
 ../RedminePlugin/redmineclinet/issue/issue.pri:
+../RedminePlugin/redmineclinet/project/project.pri:
 ../RedminePlugin/redmineclinet/redmineclinet.pri:
 /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/resolve_config.prf:
 /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/default_post.prf:
@@ -716,8 +731,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../RedminePlugin/resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../RedminePlugin/redmineplugin.h ../RedminePlugin/redmine_global.h ../RedminePlugin/redmineconstants.h ../RedminePlugin/mainwindow.h ../RedminePlugin/MainMode.h ../RedminePlugin/Settings.h ../RedminePlugin/SettingsRepository.h ../RedminePlugin/SettingsWidget.h ../RedminePlugin/redmineclinet/issue/issuemodel.h ../RedminePlugin/redmineclinet/issue/issuerequest.h ../RedminePlugin/redmineclinet/imanager.h ../RedminePlugin/redmineclinet/check.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../RedminePlugin/redmineplugin.cpp ../RedminePlugin/mainwindow.cpp ../RedminePlugin/MainMode.cpp ../RedminePlugin/Settings.cpp ../RedminePlugin/SettingsWidget.cpp ../RedminePlugin/redmineclinet/issue/issuemodel.cpp ../RedminePlugin/redmineclinet/issue/issuerequest.cpp ../RedminePlugin/redmineclinet/imanager.cpp ../RedminePlugin/redmineclinet/check.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../RedminePlugin/redmineplugin.h ../RedminePlugin/redmine_global.h ../RedminePlugin/redmineconstants.h ../RedminePlugin/mainwindow.h ../RedminePlugin/MainMode.h ../RedminePlugin/Settings.h ../RedminePlugin/SettingsRepository.h ../RedminePlugin/SettingsWidget.h ../RedminePlugin/redmineclinet/issue/issuemodel.h ../RedminePlugin/redmineclinet/issue/issuerequest.h ../RedminePlugin/redmineclinet/project/projectmodel.h ../RedminePlugin/redmineclinet/project/projectrequest.h ../RedminePlugin/redmineclinet/imanager.h ../RedminePlugin/redmineclinet/check.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../RedminePlugin/redmineplugin.cpp ../RedminePlugin/mainwindow.cpp ../RedminePlugin/MainMode.cpp ../RedminePlugin/Settings.cpp ../RedminePlugin/SettingsWidget.cpp ../RedminePlugin/redmineclinet/issue/issuemodel.cpp ../RedminePlugin/redmineclinet/issue/issuerequest.cpp ../RedminePlugin/redmineclinet/project/projectmodel.cpp ../RedminePlugin/redmineclinet/project/projectrequest.cpp ../RedminePlugin/redmineclinet/imanager.cpp ../RedminePlugin/redmineclinet/check.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../RedminePlugin/mainwindow.ui ../RedminePlugin/SettingsWidget.ui $(DISTDIR)/
 
 
@@ -758,9 +773,9 @@ compiler_moc_predefs_clean:
 .moc/debug-shared/moc_predefs.h: /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1y -fvisibility=hidden -fvisibility-inlines-hidden -Wall -W -dM -E -o .moc/debug-shared/moc_predefs.h /opt/Qt5.9.0/5.9/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: .moc/debug-shared/moc_redmineplugin.cpp .moc/debug-shared/moc_mainwindow.cpp .moc/debug-shared/moc_Settings.cpp .moc/debug-shared/moc_SettingsWidget.cpp .moc/debug-shared/moc_issuemodel.cpp .moc/debug-shared/moc_issuerequest.cpp .moc/debug-shared/moc_imanager.cpp .moc/debug-shared/moc_check.cpp
+compiler_moc_header_make_all: .moc/debug-shared/moc_redmineplugin.cpp .moc/debug-shared/moc_mainwindow.cpp .moc/debug-shared/moc_Settings.cpp .moc/debug-shared/moc_SettingsWidget.cpp .moc/debug-shared/moc_issuemodel.cpp .moc/debug-shared/moc_issuerequest.cpp .moc/debug-shared/moc_projectmodel.cpp .moc/debug-shared/moc_projectrequest.cpp .moc/debug-shared/moc_imanager.cpp .moc/debug-shared/moc_check.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) .moc/debug-shared/moc_redmineplugin.cpp .moc/debug-shared/moc_mainwindow.cpp .moc/debug-shared/moc_Settings.cpp .moc/debug-shared/moc_SettingsWidget.cpp .moc/debug-shared/moc_issuemodel.cpp .moc/debug-shared/moc_issuerequest.cpp .moc/debug-shared/moc_imanager.cpp .moc/debug-shared/moc_check.cpp
+	-$(DEL_FILE) .moc/debug-shared/moc_redmineplugin.cpp .moc/debug-shared/moc_mainwindow.cpp .moc/debug-shared/moc_Settings.cpp .moc/debug-shared/moc_SettingsWidget.cpp .moc/debug-shared/moc_issuemodel.cpp .moc/debug-shared/moc_issuerequest.cpp .moc/debug-shared/moc_projectmodel.cpp .moc/debug-shared/moc_projectrequest.cpp .moc/debug-shared/moc_imanager.cpp .moc/debug-shared/moc_check.cpp
 .moc/debug-shared/moc_redmineplugin.cpp: ../RedminePlugin/redmine_global.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QtGlobal \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
@@ -836,7 +851,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/redmineplugin.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineplugin.h -o .moc/debug-shared/moc_redmineplugin.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineplugin.h -o .moc/debug-shared/moc_redmineplugin.cpp
 
 .moc/debug-shared/moc_mainwindow.cpp: ../RedminePlugin/Settings.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QIcon \
@@ -996,13 +1011,15 @@ compiler_moc_header_clean:
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		../RedminePlugin/redmineclinet/project/projectrequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtabwidget.h \
 		../RedminePlugin/mainwindow.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/mainwindow.h -o .moc/debug-shared/moc_mainwindow.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/mainwindow.h -o .moc/debug-shared/moc_mainwindow.cpp
 
 .moc/debug-shared/moc_Settings.cpp: /opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QIcon \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qicon.h \
@@ -1156,7 +1173,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/Settings.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/Settings.h -o .moc/debug-shared/moc_Settings.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/Settings.h -o .moc/debug-shared/moc_Settings.cpp
 
 .moc/debug-shared/moc_SettingsWidget.cpp: ../RedminePlugin/SettingsRepository.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QString \
@@ -1298,7 +1315,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/SettingsWidget.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/SettingsWidget.h -o .moc/debug-shared/moc_SettingsWidget.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/SettingsWidget.h -o .moc/debug-shared/moc_SettingsWidget.cpp
 
 .moc/debug-shared/moc_issuemodel.cpp: /opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
@@ -1384,7 +1401,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/redmineclinet/issue/issuemodel.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/issue/issuemodel.h -o .moc/debug-shared/moc_issuemodel.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/issue/issuemodel.h -o .moc/debug-shared/moc_issuemodel.cpp
 
 .moc/debug-shared/moc_issuerequest.cpp: /opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
@@ -1509,7 +1526,215 @@ compiler_moc_header_clean:
 		../RedminePlugin/redmineclinet/issue/issuerequest.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/issue/issuerequest.h -o .moc/debug-shared/moc_issuerequest.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/issue/issuerequest.h -o .moc/debug-shared/moc_issuerequest.cpp
+
+.moc/debug-shared/moc_projectmodel.cpp: /opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QObject \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		.moc/debug-shared/moc_predefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/project/projectmodel.h -o .moc/debug-shared/moc_projectmodel.cpp
+
+.moc/debug-shared/moc_projectrequest.cpp: ../RedminePlugin/redmineclinet/imanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QString \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QUrl \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QVector \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QObject \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QFlags \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QXmlStreamWriter \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qxmlstream.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		../RedminePlugin/redmineclinet/project/projectrequest.h \
+		.moc/debug-shared/moc_predefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/project/projectrequest.h -o .moc/debug-shared/moc_projectrequest.cpp
 
 .moc/debug-shared/moc_imanager.cpp: /opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
@@ -1609,7 +1834,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/redmineclinet/imanager.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/imanager.h -o .moc/debug-shared/moc_imanager.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/imanager.h -o .moc/debug-shared/moc_imanager.cpp
 
 .moc/debug-shared/moc_check.cpp: ../RedminePlugin/redmineclinet/imanager.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
@@ -1710,7 +1935,7 @@ compiler_moc_header_clean:
 		../RedminePlugin/redmineclinet/check.h \
 		.moc/debug-shared/moc_predefs.h \
 		/opt/Qt5.9.0/5.9/gcc_64/bin/moc
-	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/check.h -o .moc/debug-shared/moc_check.cpp
+	/opt/Qt5.9.0/5.9/gcc_64/bin/moc $(DEFINES) --include /home/babak/Project/qt-plugin/QRedminePlugin/build/.moc/debug-shared/moc_predefs.h -I/opt/Qt5.9.0/5.9/gcc_64/mkspecs/linux-g++ -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin -I/opt/Qt5.9.0/Tools/QtCreator/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/libs -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/tools -I/home/babak/Project/3rdparty/qt-creator-opensource-src-4.3.0/src/plugins -I/home/babak/Project/qt-plugin/QRedminePlugin/build -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/issue -I/home/babak/Project/qt-plugin/QRedminePlugin/RedminePlugin/redmineclinet/project -I/opt/Qt5.9.0/5.9/gcc_64/include -I/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets -I/opt/Qt5.9.0/5.9/gcc_64/include/QtGui -I/opt/Qt5.9.0/5.9/gcc_64/include/QtTest -I/opt/Qt5.9.0/5.9/gcc_64/include/QtConcurrent -I/opt/Qt5.9.0/5.9/gcc_64/include/QtXml -I/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork -I/opt/Qt5.9.0/5.9/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../RedminePlugin/redmineclinet/check.h -o .moc/debug-shared/moc_check.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1914,6 +2139,8 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		../RedminePlugin/redmineclinet/project/projectrequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtabwidget.h \
@@ -2102,6 +2329,8 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		../RedminePlugin/redmineclinet/project/projectrequest.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QMainWindow \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qmainwindow.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtabwidget.h \
@@ -2134,8 +2363,11 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qstyle.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qrubberband.h \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QListView \
-		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qlistview.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QPushButton \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qpushbutton.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QTableView \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qtableview.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/QVBoxLayout \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qboxlayout.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtWidgets/qlayout.h \
@@ -2832,6 +3064,214 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/issuerequest.o ../RedminePlugin/redmineclinet/issue/issuerequest.cpp
 
+.obj/debug-shared/projectmodel.o: ../RedminePlugin/redmineclinet/project/projectmodel.cpp ../RedminePlugin/redmineclinet/project/projectmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QObject \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/projectmodel.o ../RedminePlugin/redmineclinet/project/projectmodel.cpp
+
+.obj/debug-shared/projectrequest.o: ../RedminePlugin/redmineclinet/project/projectrequest.cpp ../RedminePlugin/redmineclinet/project/projectrequest.h \
+		../RedminePlugin/redmineclinet/imanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetworkglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qconfig.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtcore-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsystemdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qprocessordetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcompilerdetection.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtypeinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsysinfo.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlogging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qflags.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbasicatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qgenericatomic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qatomic_msvc.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qglobalstatic.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmutex.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnumeric.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qversiontagging.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtnetwork-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstring.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qchar.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrefcount.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qnamespace.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qarraydata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringbuilder.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvariant.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qalgorithms.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiterator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhashfunctions.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpair.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qbytearraylist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringlist.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qregexp.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qstringmatcher.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmetatype.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvarlengtharray.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontainerfwd.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmap.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdebug.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qhash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qtextstream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qiodevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcoreevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qscopedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qobject_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qlocale.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qshareddata.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qvector.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qpoint.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qset.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcontiguouscache.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QSharedDataPointer \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QString \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QUrl \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qurlquery.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QVariant \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QVector \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QObject \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QSslConfiguration \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qabstractsocket.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslerror.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qcryptographichash.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatetime.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qssl.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QFlags \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QMetaType \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkReply \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QIODevice \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QNetworkRequest \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QXmlStreamWriter \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qxmlstream.h \
+		../RedminePlugin/redmineclinet/project/projectmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QAbstractTableModel \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/QList \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qevent.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtguiglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtgui-config.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qregion.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qrect.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qmargins.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qsize.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qdatastream.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qkeysequence.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfile.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/qfiledevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qvector2d.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtGui/qtouchdevice.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtCore/QPair \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/QDomDocument \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qdom.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxmlglobal.h \
+		/opt/Qt5.9.0/5.9/gcc_64/include/QtXml/qtxml-config.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/projectrequest.o ../RedminePlugin/redmineclinet/project/projectrequest.cpp
+
 .obj/debug-shared/imanager.o: ../RedminePlugin/redmineclinet/imanager.cpp ../RedminePlugin/redmineclinet/imanager.h \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/QAuthenticator \
 		/opt/Qt5.9.0/5.9/gcc_64/include/QtNetwork/qauthenticator.h \
@@ -3049,6 +3489,12 @@ compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_heade
 
 .obj/debug-shared/moc_issuerequest.o: .moc/debug-shared/moc_issuerequest.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/moc_issuerequest.o .moc/debug-shared/moc_issuerequest.cpp
+
+.obj/debug-shared/moc_projectmodel.o: .moc/debug-shared/moc_projectmodel.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/moc_projectmodel.o .moc/debug-shared/moc_projectmodel.cpp
+
+.obj/debug-shared/moc_projectrequest.o: .moc/debug-shared/moc_projectrequest.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/moc_projectrequest.o .moc/debug-shared/moc_projectrequest.cpp
 
 .obj/debug-shared/moc_imanager.o: .moc/debug-shared/moc_imanager.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/debug-shared/moc_imanager.o .moc/debug-shared/moc_imanager.cpp

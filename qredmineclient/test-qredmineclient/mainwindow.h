@@ -3,6 +3,7 @@
 
 #include "check.h"
 #include "issue/issuerequest.h"
+#include "project/projectrequest.h"
 #include <QMainWindow>
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,7 @@ public:
 
   void sltError(IManager::ReplayError error);
   void sltOk();
+  void slt1();
 private slots:
   void slt();
 
@@ -25,7 +27,8 @@ private slots:
 private:
   Ui::MainWindow *ui;
   IssueRequest *rest;
-  Check *check;
+  ProjectRequest *project;
+  // Check *check;
 };
 
 #endif // MAINWINDOW_H

@@ -73,6 +73,8 @@ public:
 
   void removeIssue(int row);
 
+  void clear();
+
 private:
   QList<Issue> listOfIssue;
 };
