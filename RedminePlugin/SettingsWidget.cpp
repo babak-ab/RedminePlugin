@@ -7,6 +7,10 @@ SettingsWidget::SettingsWidget(QWidget *parent)
   check = new Check(this);
   connect(check, &Check::sigReplyError, this, &SettingsWidget::sltReplyError);
   connect(check, &Check::sigReplyOk, this, &SettingsWidget::sltReplyOk);
+  ui->lineEdit_server->setText(mSettingConnection.server.toString());
+  ui->lineEdit_username->setText(mSettingConnection.user);
+  ui->lineEdit_password->setText(mSettingConnection.password);
+  ui->checkBox_savePassword->setChecked(mSettingConnection.savePassword);
 }
 
 SettingsWidget::~SettingsWidget() { delete ui; }
@@ -17,7 +21,23 @@ void SettingsWidget::sltReplyOk() {
   ui->label_status->setText("Status: Connection Ok");
 }
 
-Redmine::SettingConnection SettingsWidget::settingConnection() const {
+void SettingsWidget::setSettingConnection(
+    const Redmine::SettingConnection &settingConnection) {
+  mSettingConnection = settingConnection;
+  ui->lineEdit_server->setText(mSettingConnection.server.toString());
+  ui->lineEdit_username->setText(mSettingConnection.user);
+  ui->lineEdit_password->setText(mSettingConnection.password);
+  ui->checkBox_savePassword->setChecked(mSettingConnection.savePassword);
+}
+
+Redmine::SettingConnection SettingsWidget::settingConnection()  {
+
+
+    mSettingConnection.server = QUrl(ui->lineEdit_server->text());
+    mSettingConnection.user = ui->lineEdit_username->text();
+    mSettingConnection.password = ui->lineEdit_password->text();
+    mSettingConnection.savePassword = ui->checkBox_savePassword->isChecked();
+    mSettingConnection.name = ui->lineEdit_username->text();
   return mSettingConnection;
 }
 

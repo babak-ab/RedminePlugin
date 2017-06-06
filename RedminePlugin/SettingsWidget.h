@@ -17,7 +17,10 @@ public:
   explicit SettingsWidget(QWidget *parent = 0);
   ~SettingsWidget();
 
-  Redmine::SettingConnection settingConnection() const;
+  Redmine::SettingConnection settingConnection();
+
+  void
+  setSettingConnection(const Redmine::SettingConnection &settingConnection);
 
 private slots:
   void checkConnection();

@@ -7,6 +7,14 @@
 namespace Redmine {
 
 struct SettingConnection {
+  SettingConnection() {
+    name = "";
+    server = "";
+    password = "";
+    user = "";
+    savePassword = false;
+  }
+
   QString name;
   QUrl server;
   QString user;
