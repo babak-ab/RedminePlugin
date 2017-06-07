@@ -13,6 +13,7 @@ Settings::Settings(QObject *parent) : IOptionsPage(parent) {
   setCategoryIcon(categoryIcon());
   setCategory(category());
   setDisplayName(tr("General"));
+  settingsWidget = Q_NULLPTR;
   _instance = this;
   if (QSettings *settings = Core::ICore::instance()->settings()) {
     settings->beginGroup(QString::fromLatin1("Redmine.Settings"));
@@ -73,7 +74,13 @@ void Settings::apply() {
   }
 }
 
-void Settings::finish() { delete settingsWidget; }
+void Settings::finish() {
+    if(settingsWidget != Q_NULLPTR)
+    {
+        delete settingsWidget;
+        settingsWidget = Q_NULLPTR;
+    }
+}
 
 void Settings::setMainWindowSplitterSizes(QByteArray sizes) {
   if (QSettings *settings = Core::ICore::instance()->settings()) {
