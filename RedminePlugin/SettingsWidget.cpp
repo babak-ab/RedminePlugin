@@ -42,14 +42,10 @@ Redmine::SettingConnection SettingsWidget::settingConnection()  {
     return mSettingConnection;
 }
 
-void SettingsWidget::sltReplyError(IManager::ReplayError err) {
+void SettingsWidget::sltReplyError(QString err) {
 
     ui->label_status->setStyleSheet("color:red");
-    switch (err) {
-    case IManager::ReplayError_Authentication:
-        ui->label_status->setText("Status: Authentication Failed");
-        break;
-    }
+    ui->label_status->setText("Status: "+err);
 }
 
 void SettingsWidget::checkConnection() {

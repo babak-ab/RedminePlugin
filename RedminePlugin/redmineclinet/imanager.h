@@ -10,7 +10,6 @@
 class IManager : public QObject {
   Q_OBJECT
 public:
-  enum ReplayError { ReplayError_Authentication };
   IManager(QObject *parent = 0);
   void request(QUrl url, QString username, QString password);
 
@@ -25,7 +24,7 @@ protected:
 private slots:
   void sltReplyFinished(QNetworkReply *reply);
 signals:
-  virtual void sigReplyError(ReplayError err) = 0;
+  virtual void sigReplyError(QString err) = 0;
   virtual void sigReplyOk() = 0;
 };
 

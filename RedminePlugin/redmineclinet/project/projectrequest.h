@@ -19,7 +19,7 @@ protected:
 private:
   ProjectModel *model;
 signals:
-  void sigReplyError(ReplayError err);
+  void sigReplyError(QString err);
   void sigReplyOk();
 };
 

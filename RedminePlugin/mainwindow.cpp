@@ -1,15 +1,24 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "coreplugin/icore.h"
+
+#include <QMessageBox>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     issue = new IssueRequest(this);
-    connect(issue, &IssueRequest::sigReplyOk, this, &MainWindow::sltIssueReplyOk);
+    connect(issue, &IssueRequest::sigReplyOk,
+            this, &MainWindow::sltIssueReplyOk);
 
     project = new ProjectRequest(this);
     connect(project, &ProjectRequest::sigReplyOk, this,
             &MainWindow::sltProjectReplyOk);
+
+    connect(issue, &IssueRequest::sigReplyError,
+            this, &MainWindow::sltReplayError);
+    connect(project, &ProjectRequest::sigReplyError, this,
+            &MainWindow::sltReplayError);
+
 
     ui->tableView->setLayoutDirection(Qt::RightToLeft);
     ui->tableView->horizontalHeader()->setSectionResizeMode(
@@ -29,6 +38,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->horizontalHeader()->setSectionsMovable(true);
 
     sltSettingChanged();
+}
+void MainWindow::sltReplayError(QString err) {
+
+    QMessageBox::critical(this,"Connection Failed",
+                          err + "\nCheck Redmine setting in options");
+
 }
 
 

@@ -32,6 +32,7 @@ private slots:
   void sltProjectReplyOk();
 
   void sltSettingChanged();
+  void sltReplayError(QString err);
 private:
   Ui::MainWindow *ui;
   IssueRequest *issue;

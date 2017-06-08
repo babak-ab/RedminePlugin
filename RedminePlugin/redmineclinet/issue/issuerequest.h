@@ -20,7 +20,7 @@ private:
   // REST interface
 
 signals:
-  void sigReplyError(ReplayError err);
+  void sigReplyError(QString err);
   void sigReplyOk();
 
   // IManager interface

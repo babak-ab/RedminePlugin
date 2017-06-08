@@ -9,9 +9,8 @@ IManager::IManager(QObject *parent) : QObject(parent) {
 void IManager::sltReplyFinished(QNetworkReply *reply) {
 
   if (reply->error() != QNetworkReply::NoError) {
-    if (reply->error() == QNetworkReply::AuthenticationRequiredError) {
-      emit sigReplyError(ReplayError_Authentication);
-    }
+        emit sigReplyError(reply->errorString());
+
   } else {
     parse(reply);
     emit sigReplyOk();

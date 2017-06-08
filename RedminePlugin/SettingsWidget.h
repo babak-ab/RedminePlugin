@@ -31,7 +31,7 @@ private slots:
 
   void on_pushButton_checkConnection_clicked();
 
-  void sltReplyError(IManager::ReplayError err);
+  void sltReplyError(QString err);
 
   void sltReplyOk();
 
