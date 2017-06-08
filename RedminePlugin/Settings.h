@@ -33,11 +33,17 @@ private:
   SettingConnection _settingConnection;
   static Settings *_instance;
 
+  IssueColumnStatus _issueColumnStatus;
+
   // IOptionsPage interface
 public:
   QWidget *widget();
   void setSettingConnection(const SettingConnection &settingConnection);
   SettingConnection settingConnection() const;
+  IssueColumnStatus issueColumnStatus() const;
+
+Q_SIGNALS:
+  void sigSettingChanged();
 };
 
 } // namespace RedmineConnector

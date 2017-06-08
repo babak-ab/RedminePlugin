@@ -9,7 +9,7 @@ int IssueModel::rowCount(const QModelIndex &parent) const {
 
 int IssueModel::columnCount(const QModelIndex &parent) const {
   Q_UNUSED(parent);
-  return 3;
+  return 14;
 }
 
 QVariant IssueModel::data(const QModelIndex &index, int role) const {
@@ -21,12 +21,34 @@ QVariant IssueModel::data(const QModelIndex &index, int role) const {
 
   if (role == Qt::DisplayRole) {
     switch (index.column()) {
-    case 0:
+    case ColumnName_ID:
       return listOfIssue[index.row()].id;
-    case 1:
+    case ColumnName_Subject:
       return listOfIssue[index.row()].subject;
-    case 2:
+    case ColumnName_Description:
       return listOfIssue[index.row()].description;
+    case ColumnName_Author:
+      return listOfIssue[index.row()].author_name;
+    case ColumnName_Category:
+      return listOfIssue[index.row()].category_name;
+    case ColumnName_CreateOn:
+      return listOfIssue[index.row()].created_on;
+    case ColumnName_DoneRatio:
+      return listOfIssue[index.row()].done_ratio;
+    case ColumnName_DueDate:
+      return listOfIssue[index.row()].due_date;
+    case ColumnName_Status:
+      return listOfIssue[index.row()].status_name;
+    case ColumnName_Project:
+      return listOfIssue[index.row()].project_name;
+    case ColumnName_Priority:
+      return listOfIssue[index.row()].priority_name;
+    case ColumnName_StartDate:
+      return listOfIssue[index.row()].start_date;
+    case ColumnName_UpdateOn:
+      return listOfIssue[index.row()].updated_on;
+    case ColumnName_Tracker:
+      return listOfIssue[index.row()].tracker_name;
     }
   }
   return QVariant();
@@ -39,15 +61,34 @@ QVariant IssueModel::headerData(int section, Qt::Orientation orientation,
 
   if (orientation == Qt::Horizontal) {
     switch (section) {
-    case 0:
+    case ColumnName_ID:
       return tr("ID");
-
-    case 1:
+    case ColumnName_Subject:
       return tr("Subject");
-
-    case 2:
+    case ColumnName_Description:
       return tr("Description");
-
+    case ColumnName_Author:
+      return tr("Author");
+    case ColumnName_Category:
+      return tr("Category");
+    case ColumnName_CreateOn:
+      return tr("Created On");
+    case ColumnName_DoneRatio:
+      return tr("Done Ratio");
+    case ColumnName_DueDate:
+      return tr("Due Date");
+    case ColumnName_Status:
+      return tr("Status");
+    case ColumnName_Project:
+      return tr("Project");
+    case ColumnName_Priority:
+      return tr("Priority");
+    case ColumnName_StartDate:
+      return tr("Start Date");
+    case ColumnName_UpdateOn:
+      return tr("Updated On");
+    case ColumnName_Tracker:
+      return tr("Tracker");
     default:
       return QVariant();
     }
@@ -86,15 +127,49 @@ bool IssueModel::setData(const QModelIndex &index, const QVariant &value,
     int row = index.row();
 
     switch (index.column()) {
-    case 0:
+    case ColumnName_ID:
       listOfIssue[row].id = value.toInt();
       break;
-    case 1:
+    case ColumnName_Subject:
       listOfIssue[row].subject = value.toString();
       break;
-    case 2:
+    case ColumnName_Description:
       listOfIssue[row].description = value.toString();
       break;
+    case ColumnName_Author:
+      listOfIssue[row].author_name = value.toString();
+      break;
+    case ColumnName_Category:
+      listOfIssue[row].category_name = value.toString();
+      break;
+    case ColumnName_DoneRatio:
+      listOfIssue[row].done_ratio = value.toDouble();
+      break;
+    case ColumnName_DueDate:
+      listOfIssue[row].due_date = value.toString();
+      break;
+    case ColumnName_Status:
+      listOfIssue[row].status_name = value.toInt();
+      break;
+    case ColumnName_Priority:
+      listOfIssue[row].priority_name = value.toString();
+      break;
+    case ColumnName_Project:
+      listOfIssue[row].project_name = value.toString();
+      break;
+    case ColumnName_StartDate:
+      listOfIssue[row].start_date = value.toString();
+      break;
+    case ColumnName_Tracker:
+      listOfIssue[row].tracker_name = value.toString();
+      break;
+    case ColumnName_UpdateOn:
+      listOfIssue[row].updated_on = value.toString();
+      break;
+    case ColumnName_CreateOn:
+      listOfIssue[row].created_on = value.toString();
+      break;
+
     default:
       return false;
     }

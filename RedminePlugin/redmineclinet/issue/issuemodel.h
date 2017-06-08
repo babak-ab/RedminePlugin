@@ -8,49 +8,54 @@ class IssueModel : public QAbstractTableModel {
   Q_OBJECT
 
 public:
+    enum ColumnName{
+        ColumnName_ID = 0,
+        ColumnName_Subject,
+        ColumnName_Tracker,
+        ColumnName_Status,
+        ColumnName_DoneRatio,
+        ColumnName_Priority,
+        ColumnName_Author,
+        ColumnName_StartDate,
+        ColumnName_DueDate,
+        ColumnName_Category,
+        ColumnName_Project,
+        ColumnName_Description,
+        ColumnName_CreateOn,
+        ColumnName_UpdateOn
+    };
+
   struct Issue {
     Issue() {
       id = 0;
-      project_id = 0;
       project_name = "";
-      tracker_id = 0;
       tracker_name = "";
-      issueStatus_id = 0;
-      issueStatus_name = "";
-      priority_id = 0;
+      status_name = "";
       priority_name = "";
-      author_id = 0;
       author_name = "";
-      category_id = 0;
       category_name = "";
       subject = "";
       description = "";
-      start_date = 0;
-      due_date = 0;
-      created_on = 0;
-      updated_on = 0;
+      start_date = "";
+      due_date = "";
+      created_on = "";
+      updated_on = "";
       done_ratio = 0;
     }
 
     int id;
-    int project_id;
     QString project_name;
-    int tracker_id;
     QString tracker_name;
-    int issueStatus_id;
-    QString issueStatus_name;
-    int priority_id;
+    QString status_name;
     QString priority_name;
-    int author_id;
     QString author_name;
-    int category_id;
     QString category_name;
     QString subject;
     QString description;
-    quint64 start_date;
-    quint64 due_date;
-    quint64 created_on;
-    quint64 updated_on;
+    QString start_date;
+    QString due_date;
+    QString created_on;
+    QString updated_on;
     double done_ratio;
   };
   enum { ID = 0, SUBJECT, DESCRIPTION };

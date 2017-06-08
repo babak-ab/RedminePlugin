@@ -31,10 +31,13 @@ private slots:
 
   void sltProjectReplyOk();
 
+  void sltSettingChanged();
 private:
   Ui::MainWindow *ui;
   IssueRequest *issue;
   ProjectRequest *project;
+   IssueColumnStatus issueStatus;
+
 };
 
 #endif // MAINWINDOW_H

@@ -27,12 +27,39 @@ void IssueRequest::parse(QNetworkReply *reply) {
     QDomElement id = n.firstChildElement("id");
     QDomElement subject = n.firstChildElement("subject");
     QDomElement description = n.firstChildElement("description");
-    if (id.isNull() || subject.isNull() || description.isNull())
-      continue;
+    QDomElement project = n.firstChildElement("project");
+    QDomElement tracker = n.firstChildElement("tracker");
+    QDomElement status = n.firstChildElement("status");
+    QDomElement priority = n.firstChildElement("priority");
+    QDomElement author = n.firstChildElement("author");
+    QDomElement category = n.firstChildElement("category");
+    QDomElement start_date = n.firstChildElement("start_date");
+    QDomElement due_date = n.firstChildElement("due_date");
+    QDomElement done_ratio = n.firstChildElement("done_ratio");
+
+    QDomElement created_on = n.firstChildElement("created_on");
+    QDomElement updated_on = n.firstChildElement("updated_on");
+//    if (id.isNull() || subject.isNull() || description.isNull() ||
+//            project.isNull() || tracker.isNull() || status.isNull() ||
+//            priority.isNull() || author.isNull() || category.isNull() ||
+//            start_date.isNull() || due_date.isNull() || done_ratio.isNull() ||
+//            created_on.isNull() || updated_on.isNull())
+//      continue;
     IssueModel::Issue issue;
     issue.id = id.text().toInt();
     issue.subject = subject.text();
     issue.description = description.text();
+    issue.author_name = author.attribute("name","-");
+    issue.category_name = category.attribute("name","-");
+    issue.created_on = created_on.text();
+    issue.done_ratio = done_ratio.text().toInt();
+    issue.due_date = due_date.text();
+    issue.status_name = status.attribute("name","-");
+    issue.priority_name = priority.attribute("name","-");
+    issue.project_name = project.attribute("name","-");
+    issue.start_date =  start_date.text();
+    issue.tracker_name = tracker.attribute("name","-");
+    issue.updated_on = updated_on.text();
 
     model->addIssue(issue);
   }

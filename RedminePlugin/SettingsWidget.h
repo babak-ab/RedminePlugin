@@ -14,6 +14,8 @@ class SettingsWidget : public QWidget {
   Q_OBJECT
 
 public:
+
+
   explicit SettingsWidget(QWidget *parent = 0);
   ~SettingsWidget();
 
@@ -22,6 +24,8 @@ public:
   void
   setSettingConnection(const Redmine::SettingConnection &settingConnection);
 
+  IssueColumnStatus getIssueColumnStatus();
+  void setIssueColumnStatus(IssueColumnStatus status);
 private slots:
   void checkConnection();
 

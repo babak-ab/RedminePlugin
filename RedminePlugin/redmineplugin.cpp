@@ -48,7 +48,9 @@ bool RedminePlugin::initialize(const QStringList &arguments,
   Q_UNUSED(errorString)
 
   Settings::instance()->setParent(this);
+
   addAutoReleasedObject(Settings::instance());
+
 
   MainWindow *mainWindow = new MainWindow();
 
