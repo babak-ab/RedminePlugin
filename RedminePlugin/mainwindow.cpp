@@ -102,6 +102,8 @@ void MainWindow::on_pushButton_loadAllIssue_clicked() {
 
 void MainWindow::on_pushButton_project_clicked() {
     ui->tableView->setModel(Q_NULLPTR);
+    ui->comboBox_project->setModel(Q_NULLPTR);
+    ui->comboBox_project->clear();
     SettingConnection setting = Settings::instance()->settingConnection();
     project->getProject(setting.server, setting.user, setting.password);
 }
